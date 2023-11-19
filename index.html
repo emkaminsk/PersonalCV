@@ -26,6 +26,35 @@
             >
           </li>
         </ul>
+        <!-- Social Media Links -->
+        <li class="social-media">
+          <a
+            href="https://www.facebook.com/marcin.kaminski.01/"
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="#ffffff">
+              <img src="./icons/facebook.svg" alt="Facebook">
+            </svg>
+          </a>
+          <a href="https://twitter.com/emkaminsk" class="social-link">
+            <svg viewBox="0 0 24 24" fill="#ffffff">
+              <img src="./icons/x.svg" alt="X.com">
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/marcinkaminski/"
+            class="social-link"
+          >
+            <svg viewBox="0 0 24 24" fill="#ffffff">
+              <img src="./icons/linkedin.svg" alt="Linkedin">
+            </svg>
+          </a>
+          <a href="https://github.com/emkaminsk" class="social-link">
+            <svg viewBox="0 0 24 24" fill="#ffffff">
+              <img src="./icons/github.svg" alt="GitHub">
+            </svg>
+          </a>
+        </li>
         <ul>
           <li>
             <details role="list" dir="rtl">
@@ -52,28 +81,43 @@
     <main class="container">
       <div class="grid">
         <section>
-          <hgroup>
-            <h2>About Me</h2>
-            <h3>Product Owner for IT Projects</h3>
-          </hgroup>
-          <p>
-            Product Owner for IT projects with 5 years of Agile experience
-            facilitating communication between business and IT, with programming
-            and testing skills, e-MBA, and background in finance and data
-            science.
-          </p>
-          <figure>
-            <img
-              src="https://source.unsplash.com/featured/?portrait,professional"
-              alt="Marcin Kamiński"
-            />
-            <figcaption>Marcin Kamiński</figcaption>
-          </figure>
+          <div class="flex-container">
+            <hgroup>
+              <h2>About Me</h2>
+              <p>
+                Product Owner for IT projects with 5 years of Agile experience
+                facilitating communication between business and IT, with
+                programming and testing skills, e-MBA, and background in finance
+                and data science.
+              </p>
+            </hgroup>
+            <figure>
+              <img src="./img/MK03.jpg" alt="Marcin Kamiński" />
+              <figcaption>Marcin Kamiński</figcaption>
+            </figure>
+          </div>
+
           <h3 id="experience">Experience</h3>
           <!-- Experience Details -->
-          <p>Sii, Technical Product Owner<br />August 2023 - now</p>
-          <p>Codenotary, Product Owner<br />May 2022 - July 2023</p>
-          <!-- More Experience Details -->
+          <div class="job-experience">
+            <strong>Sii,</strong> <span class="job-title">Technical Product Owner</span>
+            <p>August 2023 - now</p>
+            <p>Tools: VSCode, Azure DevOps, Miro</p>
+            <p>Project technologies: Java, React, Kubernetes</p>
+          </div>
+          <div class="job-experience">
+            <strong>Codenotary,</strong> <span class="job-title">Product Owner</span>
+            <p>May 2022 - July 2023</p>
+            <ul>
+              <li>Leading the development of all Codenotary’s IT products, such as vault.immudb.io, sbomcenter.io, Trustcenter, and Opvizor.</li>
+              <li>Managed product lifecycle from vision to delivery, interviewing customers to build and prioritize the backlog.</li>
+              <li>Collaborated with the engineering manager and global multicultural team to translate market and product requirements into documentation, user stories, and test cases.</li>
+              <li>Coordinated refinements, conducted team retrospectives, and implemented engineering best practices.</li>
+              <li>Assisted with release planning and manual testing.</li>
+            </ul>
+            <p>Tools: VSCode, Autorest API, GitHub, Miro, MobaXterm</p>
+            <p>Project technologies: Go, Python, Typescript, Kubernetes, Docker</p>
+          </div>                        
           <h3 id="education">Education</h3>
           <!-- Education Details -->
           <p>

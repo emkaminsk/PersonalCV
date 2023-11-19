@@ -8,7 +8,7 @@
 /* Typography */
 h2,
 h3,
-hgroup> :last-child {
+hgroup > :last-child {
   font-weight: 200;
 }
 
@@ -28,7 +28,7 @@ header {
   padding: var(--spacing-company) 0;
 }
 
-header hgroup> :last-child {
+header hgroup > :last-child {
   color: var(--h3-color);
 }
 
@@ -62,4 +62,94 @@ aside img {
 aside p {
   margin-bottom: var(--spacing-company);
   line-height: 1.25;
+}
+
+/* Container for the hgroup and figure */
+.flex-container {
+  display: flex;
+  align-items: center; /* Aligns items vertically in the center */
+  justify-content: space-between; /* Spreads items out evenly */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+}
+
+/* Style for the hgroup */
+hgroup {
+  flex: 1; /* Allows the hgroup to grow and take up available space */
+}
+
+/* Style for the figure */
+figure {
+  flex: 0 1 auto; /* Prevents the figure from growing but allows it to shrink */
+  margin-left: 20px; /* Adds some space between the text and the image */
+}
+
+/* Optional: style for the image */
+figure img {
+  max-width: 200px; /* Adjust as needed */
+  height: auto;
+}
+
+/* Social media */
+.social-media {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px; /* Adjust the space between icons */
+}
+
+.social-link {
+  display: inline-block;
+  vertical-align: top; /* Aligns the top of the element with the top of the tallest item in the line */
+  margin-top: -80px; /* Adjust as necessary to move icons higher */
+  width: 48px; /* Adjust icon size */
+  height: 48px;
+  fill: #ffffff; /* Makes the SVG icon white */
+  text-decoration: none;
+}
+
+.social-link img {
+  display: block;
+  width: 24px; /* Or your preferred size */
+  height: auto;
+  fill: currentColor; /* Inherit color from parent */
+}
+
+/* You can set the fill property to change the icon color */
+.social-link:hover {
+  fill: #007bff; /* Example hover color */
+}
+
+/* Job experience */
+#experience {
+  margin-bottom: 20px;
+}
+
+.job-experience {
+  margin-bottom: 20px; /* Adds space between job experiences */
+}
+
+.job-experience strong {
+  font-size: 1.2em; /* Larger font size for company names */
+  color: #000; /* Choose a color that stands out */
+  font-weight: bold; /* Makes the company names bold */
+}
+
+.job-title {
+  font-size: 1em; /* Slightly smaller than company names */
+  color: #555; /* A subtler color for job titles */
+  font-weight: normal;
+}
+
+.job-experience p,
+.job-experience ul {
+  margin-left: 20px; /* Indent details to align under job titles */
+}
+
+ul {
+  list-style-type: square; /* Style list bullets */
+}
+
+/* Style for tools and technologies */
+.job-experience p {
+  font-style: italic; /* Italicize the tools and technologies */
+  color: #333; /* A color that blends with the rest of the text */
 }
