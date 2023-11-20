@@ -99,23 +99,16 @@ figure img {
 .social-link {
   display: inline-block;
   vertical-align: top; /* Aligns the top of the element with the top of the tallest item in the line */
-  margin-top: -80px; /* Adjust as necessary to move icons higher */
+  margin-top: 0px; /* Adjust as necessary to move icons higher */
   width: 48px; /* Adjust icon size */
   height: 48px;
-  fill: #ffffff; /* Makes the SVG icon white */
   text-decoration: none;
 }
 
 .social-link img {
   display: block;
-  width: 24px; /* Or your preferred size */
+  width: 100%; /* Adjust icon size within the container */
   height: auto;
-  fill: currentColor; /* Inherit color from parent */
-}
-
-/* You can set the fill property to change the icon color */
-.social-link:hover {
-  fill: #007bff; /* Example hover color */
 }
 
 /* Job experience */
@@ -152,4 +145,53 @@ ul {
 .job-experience p {
   font-style: italic; /* Italicize the tools and technologies */
   color: #333; /* A color that blends with the rest of the text */
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 250px;
+  right: 0;
+  width: 550px; /* Adjust the width as needed */
+  height: calc(
+    300% - 250px
+  ); /* Subtract the same value to maintain the gap at the top */
+  background-color: #f9f9f9; /* Light background for the sidebar */
+  overflow-y: auto; /* Adds scroll to the sidebar if content is too long */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Make sure this is higher than the z-index of elements behind the sidebar */
+}
+
+.sidebar-section h4 {
+  margin-top: 0;
+  padding-top: 20px;
+}
+
+.sidebar-section ul {
+  padding-left: 20px;
+  font-size: 0.9em; /* This will make the font size smaller */
+  line-height: 1.2; /* This will make the interline spacing narrower */
+}
+
+.sidebar-section ul li {
+  margin-bottom: 0em; /* Adjust the space between list items if needed */
+}
+
+.sidebar-section p {
+  padding-left: 20px;
+  font-size: 0.9em; /* Apply the same font size for consistency */
+  line-height: 1.2; /* Apply the same line height for consistency */
+}
+
+@media screen and (max-width: 960px) {
+  #sidebar {
+    width: 200px; /* Smaller width on smaller screens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #sidebar {
+    display: none; /* Hide sidebar on very small screens */
+  }
 }
