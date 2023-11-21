@@ -6,8 +6,38 @@
 }
 
 /* Typography */
-h2,
-h3,
+
+/* For all screen sizes */
+h1 {
+  font-weight: 600; /* Bold but not too heavy */
+}
+
+h2 {
+  font-weight: 500; /* Subtle boldness for sub-headers */
+  text-align: left; /* Consistent text alignment */
+}
+
+h2 {
+  font-weight: 250; /* Subtle boldness for sub-headers */
+  text-align: left; /* Consistent text alignment */
+}
+
+.job-experience {
+  margin-bottom: 1rem; /* Reduce space between job experiences */
+}
+
+.flex-container {
+  align-items: flex-start; /* Align items to the top */
+}
+
+.job-title {
+  font-weight: normal; /* Differentiate from company names */
+}
+
+hgroup h2 {
+  font-weight: 500; /* Or you can use a specific size like 1.5em, 18px, etc. */
+}
+
 hgroup > :last-child {
   font-weight: 200;
 }
@@ -42,6 +72,30 @@ summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
   color: var(--contrast-hover);
 }
 
+/* Contact info */
+.contact-info {
+  margin-top: 1rem; /* Spacing from the About Me content */
+}
+
+.contact-info h3 {
+  font-size: 1.2em; /* Adjust as needed */
+  margin-bottom: 0.5rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.5rem;
+  font-size: 1em; /* Adjust as needed */
+}
+
+.contact-info a {
+  color: #007bff; /* Adjust the color as needed */
+  text-decoration: none; /* Optional: Removes the underline */
+}
+
+.contact-info a:hover {
+  text-decoration: underline; /* Optional: Underline on hover */
+}
+
 /* Main */
 @media (min-width: 992px) {
   main .grid {
@@ -52,6 +106,67 @@ summary[role="link"].contrast:is([aria-current], :hover, :active, :focus) {
 
 form.grid {
   grid-row-gap: 0;
+}
+
+/* Modify the left margin */
+/* Adjust container padding */
+.container {
+  margin-left: 5rem; /* Adjust this value as needed */
+  padding-left: 0rem; /* Adjust this value as needed */
+  padding-right: 1rem; /* Adjust this value as needed */
+}
+
+/* If you are using a grid layout, you might want to adjust the gap as well */
+.main .grid {
+  grid-column-gap: 0rem; /* Adjust this value as needed */
+}
+
+/* Adjust the starting point of the main content */
+main {
+  margin-left: 0rem; /* Adjust this value as needed */
+}
+
+/* Additionally, check if there are any other elements with padding or margin that need to be adjusted */
+hgroup,
+.job-experience,
+#experience,
+.flex-container,
+ul {
+  margin-left: 0rem; /* Adjust this value as needed */
+  padding-left: 0; /* Set padding to 0 if you want content to start from the very edge */
+}
+
+/* Override any global dark theme settings for mobile */
+@media (max-width: 768px) {
+  body {
+    background-color: #ffffff; /* Ensure the background is white on mobile */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Adjust for mobile */
+  }
+
+  h2 {
+    font-size: 1.25rem; /* Adjust for mobile */
+  }
+
+  .container {
+    padding-left: 1rem; /* Reduced padding for mobile */
+    padding-right: 1rem;
+  }
+
+  :root {
+    --spacing-company: 1rem; /* Reduced global spacing for mobile */
+  }
+
+  hgroup {
+    margin-bottom: 1rem; /* Reduced vertical spacing between headers */
+  }
+
+  .job-experience,
+  .flex-container {
+    margin-left: 0; /* Align with the rest of the content */
+  }
 }
 
 /* Aside nav */
@@ -147,6 +262,29 @@ ul {
   color: #333; /* A color that blends with the rest of the text */
 }
 
+/* Education title */
+.education-experience {
+  margin-bottom: 1rem; /* Space between education entries */
+}
+
+.education-experience strong {
+  font-size: 1.2em; /* Larger font size for the institution names */
+  color: #000; /* Color for institution names */
+  font-weight: bold; /* Bold font weight for institution names */
+}
+
+.education-experience .education-title {
+  font-size: 1em; /* Font size for the title */
+  color: #555; /* Subtle color for the title */
+  font-weight: normal; /* Normal font weight for the title */
+}
+
+.education-experience p {
+  margin-left: 20px; /* Indent details to align under titles */
+  font-style: italic; /* Italicize the date range */
+  color: #333; /* Color that blends with the rest of the text */
+}
+
 /* Sidebar */
 #sidebar {
   position: fixed;
@@ -163,19 +301,28 @@ ul {
   z-index: 1000; /* Make sure this is higher than the z-index of elements behind the sidebar */
 }
 
+.sidebar-section {
+  margin-bottom: 1rem; /* Smaller margin between sections */
+}
+
 .sidebar-section h4 {
   margin-top: 0;
   padding-top: 20px;
+  font-size: 1em; /* Smaller font size for headings */
+  margin-bottom: 0.2rem; /* Reduced bottom margin for headings */
 }
 
 .sidebar-section ul {
-  padding-left: 20px;
   font-size: 0.9em; /* This will make the font size smaller */
   line-height: 1.2; /* This will make the interline spacing narrower */
+  padding-left: 1.5rem; /* Reduced padding for list */
+  margin-bottom: 0.2rem; /* Reduced bottom margin for list */
 }
 
 .sidebar-section ul li {
-  margin-bottom: 0em; /* Adjust the space between list items if needed */
+  font-size: 0.9em; /* Smaller font size for list items */
+  line-height: 1.2; /* Reduced line height for list items */
+  margin-bottom: -0.5rem; /* Reduced space between list items */
 }
 
 .sidebar-section p {
