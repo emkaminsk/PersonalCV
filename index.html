@@ -74,28 +74,45 @@
     <main class="container">
       <div class="grid">
         <section>
-          <div class="flex-container">
-            <hgroup>
-              <h2>About Me</h2>
-              <p>
-                Product Owner for IT projects with 5 years of Agile experience
-                facilitating communication between business and IT, with
-                programming and testing skills, e-MBA, and background in finance
-                and data science.
-              </p>
-            </hgroup>
-            <figure>
-              <img src="./img/MK03.jpg" alt="Marcin Kamiński" />
-              <figcaption>Marcin Kamiński</figcaption>
-            </figure>
+          <div class="about-me-section">
+            <div class="flex-container">
+              <hgroup>
+                <h2>About Me</h2>
+                <p>
+                  Product Owner for IT projects with 5 years of Agile experience
+                  facilitating communication between business and IT, with
+                  programming and testing skills, e-MBA, and background in
+                  finance and data science.
+                </p>
+                <div class="contact-info">
+                  <h3>Contact Information</h3>
+                  <p>
+                    Email:
+                    <a href="mailto:marcin@mkkonsultant.com"
+                      >marcin@mkkonsultant.com</a
+                    >
+                  </p>
+                </div>
+              </hgroup>
+              <figure>
+                <img src="./img/MK03.jpg" alt="Marcin Kamiński" />
+                <figcaption>Marcin Kamiński</figcaption>
+              </figure>
+            </div>
           </div>
-
           <h3 id="experience">Experience</h3>
           <!-- Experience Details -->
           <div class="job-experience">
             <strong>Sii,</strong>
             <span class="job-title">Technical Product Owner</span>
             <p>August 2023 - now</p>
+            <ul>
+              <li>
+                Product Owner for several teams speeding up development of
+                product's Platform in a leading international pharmaceutical
+                company.
+              </li>
+            </ul>
             <p>Tools: VSCode, Azure DevOps, Miro</p>
             <p>Project technologies: Java, React, Kubernetes</p>
           </div>
@@ -128,13 +145,107 @@
               Project technologies: Go, Python, Typescript, Kubernetes, Docker
             </p>
           </div>
+          <div class="job-experience">
+            <strong>Santander Bank Polska,</strong>
+            <span class="job-title">Poznań - Scrum Product Owner</span>
+            <p>February 2019 - April 2022</p>
+            <ul>
+              <li>
+                Oversaw automated credit decisions in Tribe Risk Engineering,
+                leading the admission team for secured and unsecured lending.
+              </li>
+              <li>
+                Expanded retail credit sales in digital channels.
+              </li>
+              <li>
+                Implemented KNF recommendations through use case definition and
+                business analysis.
+              </li>
+              <li>
+                Developed KPI monitoring tool.
+              </li>
+              <li>
+                Participated in intra-bank group implementing emergency
+                anti-Covid measures regarding MPKK, building API-based
+                information exchange system.
+              </li>
+            </ul>
+            <p>
+              Project technologies: Java, Openshift, AbInitio, Teradata, Python
+            </p>
+          </div>
+          <div class="job-experience">
+            <strong>BZWBK,</strong>
+            <span class="job-title">Poznań - various roles</span>
+            <p>PM / Agile Product Owner: December 2015 - January 2019</p>
+            <ul>
+              <li>
+                Managed portfolio of projects in Risk Division & Business
+                Intelligence.
+              </li>
+              <li>
+                Owned Customer Analytical Repository, providing data for CRM and
+                Risk; collaborated with data analysts and Accenture and Teradata
+                for system refactoring.
+              </li>
+              <li>
+                Coordinated business analysis of requirements from Risk division
+                teams during the Santander and Deutsche Bank merger.
+              </li>
+              <li>
+                Served as Scrum product owner for Risk's IT credit process team.
+              </li>
+            </ul>
+            <p>Specialist, Manager: August 2005 - January 2015</p>
+            <ul>
+              <li>
+                Held various roles in reporting and decision systems
+                development, advancing to a management position in 2009.
+              </li>
+              <li>
+                Developed scoring performance reports. Led testing during the
+                merger with Kredyt Bank. Owned SME & Corpo decision engine.
+                Migrated Decision Engine from CGI to AbInitio. Conducted
+                business analysis, communicated requirements to Java developers,
+                and managed DE development and solution QA.
+              </li>
+            </ul>
+            <p>
+              Project technologies: Java, Openshift, AbInitio, Teradata, Python
+            </p>
+          </div>
           <h3 id="education">Education</h3>
           <!-- Education Details -->
-          <p>
-            University of Technology, Poznań — Postgraduate<br />November 2016 -
-            June 2017
-          </p>
-          <!-- More Education Details -->
+          <div class="education-experience">
+            <strong>University of Technology</strong>,
+            <span class="education-title">Postgraduate</span><br />
+            <p>November 2016 - June 2017</p>
+            <ul>
+              <li>
+                Data warehouses and data analysis for business applications.
+              </li>
+            </ul>
+          </div>
+          <div class="education-experience">
+            <strong>Aalto University & WSB</strong>,
+            <span class="education-title">eMBA</span><br />
+            <p>November 2011 - June 2013</p>
+            <ul>
+              <li>
+                Completed full studies, with extra summer courses in Helsinki.
+              </li>
+            </ul>
+          </div>
+          <div class="education-experience">
+            <strong>University of Economics</strong>,
+            <span class="education-title">Master</span><br />
+            <p>November 2016 - June 2017</p>
+            <ul>
+              <li>
+                Full time, Banking specialization, graduated with distinction
+              </li>
+            </ul>
+          </div>
           <h3 id="interests">Interests</h3>
           <p>Classical music, chess, go, podcasts, sci-fi, Vipassana.</p>
         </section>
@@ -146,23 +257,39 @@
         <ul>
           <li>Relationship-building</li>
           <li>Engagement and loyalty</li>
-          <!-- Add more skills here -->
+          <li>Credit lending domain knowledge</li>
+          <li>Customer-centric approach</li>
+          <li>Cross-functional collaboration</li>
+          <li>Data-driven decision making</li>
         </ul>
       </section>
       <section class="sidebar-section">
         <h4>Technical Skills</h4>
         <ul>
-          <li>Docker, Git, GitHub, GH Actions</li>
+          <li>
+            Linux, Docker, Git, GitHub, curl, Vim, OpenAPI/swagger, GH Actions
+          </li>
           <li>
             Python3 (pandas, dash, plotly) in VSCode, Pycharm, Jupyter, Google
             Colab
           </li>
-          <li>Business Objects, RapidMiner, Weka, PowerBI, Tableau</li>
-          <li>SQL, Linux, curl, Vim, OpenAPI/swagger</li>
+          <li>SQL, Business Objects, RapidMiner, Weka, PowerBI, Tableau</li>
           <li>
             Wordpress, SEO Optimization, Markdown, AsciiDoc, Azure, AWS, Mermaid
           </li>
+          <li>NGINX, HTML, CSS, JS (basics)</li>
           <li>Prompt Engineering with GPT-4, Auto-GPT, multiple other LLMs</li>
+        </ul>
+      </section>
+      <section class="sidebar-section">
+        <h4>Trainings</h4>
+        <ul>
+          <li>AiDevs2 certificate</li>
+          <li>Prince2 Foundation</li>
+          <li>ISTQB Foundation & Advanced Test Manager</li>
+          <li>IBAQB Foundation, ITIL</li>
+          <li>Design Thinking</li>
+          <li>7 habits of highly effective people</li>
         </ul>
       </section>
       <section class="sidebar-section">
@@ -170,7 +297,7 @@
         <ul>
           <li>English - very fluent</li>
           <li>Spanish - basic communication</li>
-          <!-- Add more languages here -->
+          <li>German - basic reading skills</li>
         </ul>
       </section>
       <!-- Add more sections as needed -->
