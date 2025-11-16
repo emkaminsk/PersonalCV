@@ -1,0 +1,24 @@
+{
+  "name": "personal-cv",
+  "version": "1.0.0",
+  "description": "Personal CV website for Marcin Kamiński - Technical Product Owner",
+  "scripts": {
+    "optimize-images": "node optimize-images.js",
+    "start": "npx http-server -p 8080",
+    "test": "echo \"No tests configured yet\" && exit 0"
+  },
+  "keywords": [
+    "cv",
+    "resume",
+    "portfolio",
+    "personal-website"
+  ],
+  "author": "Marcin Kamiński <emkaminsk@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.33.0"
+  },
+  "optionalDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
