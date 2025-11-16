@@ -34,20 +34,6 @@ This is a simple HTML-based webpage containing a comprehensive CV for public rev
 
 The project is designed for Technical Product Owners and IT professionals who need a modern web presence to showcase their career achievements and technical expertise.
 
-## Tech Stack
-
-This project uses a minimal tech stack with no build process required:
-
-- **HTML5** - Semantic markup for content structure
-- **CSS3** - Custom styling with CSS variables and responsive design
-- **JavaScript (ES6+)** - Theme switcher functionality
-- **[Pico CSS v1](https://picocss.com/)** - Minimal CSS framework via CDN
-- **SVG Icons** - Custom social media icons
-
-### External Dependencies
-
-- Pico CSS Framework: `https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css`
-
 ## Getting Started Locally
 
 Since this is a static HTML website, getting started is straightforward:
