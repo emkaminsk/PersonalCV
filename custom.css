@@ -332,6 +332,43 @@ ul {
   padding-left: 0; /* Set padding to 0 if you want content to start from the very edge */
 }
 
+/* Very small screens (320px minimum) */
+@media (max-width: 320px) {
+  .container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .social-link {
+    width: 40px;
+    height: 40px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  .accordion-header {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+}
+
+/* Large screens - prevent excessive line length */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Override any global dark theme settings for mobile */
 @media (max-width: 768px) {
   body {
