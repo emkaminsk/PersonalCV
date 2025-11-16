@@ -5,6 +5,202 @@
   --border-radius: 0;
 }
 
+/* Skip to content link - Accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 0 0 0.25rem 0;
+  z-index: 1000;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--primary-focus);
+  outline-offset: 2px;
+}
+
+/* Theme toggle button */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle-btn:focus {
+  outline: 2px solid var(--contrast-hover);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+
+.theme-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate icon based on theme */
+[data-theme="dark"] .theme-icon {
+  transform: rotate(180deg);
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: none;
+  z-index: 99;
+  border: none;
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 48px;
+  height: 48px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  opacity: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top.visible {
+  display: flex;
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top:focus {
+  outline: 2px solid var(--primary-focus);
+  outline-offset: 2px;
+}
+
+/* Accordion Container - Mobile Only */
+.accordion-container {
+  display: none;
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 767px) {
+  .accordion-container {
+    display: block;
+  }
+}
+
+/* Accordion Item */
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid var(--muted-border-color);
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+/* Accordion Header/Button */
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  background: var(--card-background-color);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+  color: var(--color);
+}
+
+.accordion-header:hover {
+  background: var(--card-sectionning-background-color);
+}
+
+.accordion-header:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: -2px;
+}
+
+/* Accordion Icon */
+.accordion-icon {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordion-header[aria-expanded="true"] .accordion-icon {
+  transform: rotate(180deg);
+}
+
+/* Accordion Panel */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: var(--card-background-color);
+}
+
+.accordion-panel.expanded {
+  max-height: 1000px;
+  padding: 1rem;
+}
+
+.accordion-panel ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.accordion-panel li {
+  margin-bottom: 0.5rem;
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .accordion-panel,
+  .accordion-icon,
+  .back-to-top,
+  .theme-icon {
+    transition: none;
+  }
+}
+
+/* Focus indicators for all interactive elements */
+a:focus,
+button:focus,
+summary:focus,
+details:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Section scroll offset for sticky nav */
+section[id] {
+  scroll-margin-top: 100px;
+}
+
 /* Typography */
 
 /* For all screen sizes */
@@ -208,22 +404,47 @@ figure img {
 .social-media {
   display: inline-flex;
   align-items: center;
-  gap: 20px; /* Adjust the space between icons */
+  gap: 20px;
 }
 
 .social-link {
-  display: inline-block;
-  vertical-align: top; /* Aligns the top of the element with the top of the tallest item in the line */
-  margin-top: 0px; /* Adjust as necessary to move icons higher */
-  width: 48px; /* Adjust icon size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  margin-top: 0px;
+  width: 48px;
   height: 48px;
+  min-width: 44px;
+  min-height: 44px;
   text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link:focus {
+  outline: 2px solid var(--contrast-hover);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
 }
 
 .social-link img {
   display: block;
-  width: 100%; /* Adjust icon size within the container */
+  width: 100%;
   height: auto;
+}
+
+/* Mobile touch targets */
+@media screen and (max-width: 768px) {
+  .social-link,
+  .accordion-header,
+  .back-to-top {
+    min-width: 44px;
+    min-height: 44px;
+  }
 }
 
 /* Job experience */
