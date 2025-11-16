@@ -36,14 +36,6 @@ To provide a professional, accessible, and performant online CV that effectively
 - Usability: All interactive elements keyboard accessible
 - SEO: Proper structured data implementation (JSON-LD)
 
-### 1.7 Tech Stack
-- HTML5 - Semantic markup for content structure
-- CSS3 - Custom styling with CSS variables and responsive design
-- JavaScript (ES6+) - Theme switcher functionality
-- Pico CSS v1 - Minimal CSS framework via CDN
-- SVG Icons - Custom social media icons
-- GitHub Actions - Automation to deploy changes to production server
-
 ## 2. User Problem
 
 ### 2.1 Problem Statement
