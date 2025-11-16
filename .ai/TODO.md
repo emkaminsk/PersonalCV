@@ -587,28 +587,27 @@ This document outlines the comprehensive development plan for implementing the P
   - List improvements
   - List bug fixes
 
-- [ ] 🔴 **11.4** Deployment preparation
-  - Choose hosting platform (GitHub Pages, Netlify, Vercel, etc.)
-  - Configure deployment settings
-  - Ensure HTTPS is enabled
-  - Set up custom domain (if applicable)
+- [x] 🔴 **11.4** Deployment preparation
 
-- [ ] 🔴 **11.5** Deploy to production
+- [x] 🔴 **11.5** Deploy to production
   - Deploy site to hosting platform
   - Verify all assets load correctly
   - Test all functionality in production
   - Verify SSL certificate is valid
   - Test from different networks/locations
 
-- [ ] 🔴 **11.6** Post-deployment testing
+- [] 🔴 **11.6** Deployment automation
+  - build Github Action workflow
+  - test the automation
+
+- [ ] 🔴 **11.7** Post-deployment testing
   - Run final Lighthouse audit in production
   - Test all links and navigation
   - Verify theme toggle works
   - Test on mobile device via production URL
   - Check social sharing previews
 
-- [ ] 🟡 **11.7** Set up monitoring (optional)
-  - Google Analytics or privacy-respecting alternative
+- [ ] 🟡 **11.8** Set up monitoring (optional)  
   - Uptime monitoring
   - Error tracking
   - Performance monitoring
