@@ -1,12 +1,7 @@
-<a href="https://picocss.com/">
-  <img src="https://picocss.com/img/logo.svg" width="64" height="64">
-</a>
+# Webpage with my CV
 
-# Company
-| Pico version | Tech stack |
-| ----- | ----- |
-| 1 | HTML |
+This is a simple HTML page with some dynamic elements that contains my CV for public review.
 
-A classic company or blog layout with a sidebar.
+## CodeSandbox
 
 [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-company)
