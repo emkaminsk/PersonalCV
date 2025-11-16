@@ -7,7 +7,7 @@ This project uses a minimal tech stack with no build process required:
 - **JavaScript (ES6+)** - Theme switcher functionality
 - **[Pico CSS v1](https://picocss.com/)** - Minimal CSS framework via CDN
 - **SVG Icons** - Custom social media icons
-
+- **Github Actions** - automation to push changes to main to production Mikr.us server
 ### External Dependencies
 
 - Pico CSS Framework: `https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css`
