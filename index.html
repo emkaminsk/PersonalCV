@@ -3,25 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Marcin Kamiński - CV</title>
+    <title>Marcin Kamiński - Technical Product Owner CV</title>
     <meta
       name="description"
       content="CV page for Marcin Kamiński, Technical Product Owner with both business and IT skills"
     />
+    <meta name="author" content="Marcin Kamiński" />
+    <link rel="canonical" href="https://marcinkaminski.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://marcinkaminski.com/" />
+    <meta property="og:title" content="Marcin Kamiński - Technical Product Owner" />
+    <meta property="og:description" content="Product Owner for IT projects with 5 years of Agile experience, programming skills, e-MBA, and background in finance and data science." />
+    <meta property="og:image" content="https://marcinkaminski.com/img/MK03.jpg" />
+    <meta property="profile:first_name" content="Marcin" />
+    <meta property="profile:last_name" content="Kamiński" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@emkaminsk" />
+    <meta name="twitter:creator" content="@emkaminsk" />
+    <meta name="twitter:url" content="https://marcinkaminski.com/" />
+    <meta name="twitter:title" content="Marcin Kamiński - Technical Product Owner" />
+    <meta name="twitter:description" content="Product Owner for IT projects with 5 years of Agile experience, programming skills, e-MBA, and background in finance and data science." />
+    <meta name="twitter:image" content="https://marcinkaminski.com/img/MK03.jpg" />
+
+    <!-- Inline theme script to prevent flash of wrong theme -->
+    <script>
+      (function() {
+        const saved = localStorage.getItem('picoPreferredColorScheme');
+        const theme = saved ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
     />
     <!-- Custom styles for this example -->
     <link rel="stylesheet" href="custom.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marcin Kamiński",
+      "givenName": "Marcin",
+      "familyName": "Kamiński",
+      "jobTitle": "Technical Product Owner",
+      "description": "Product Owner for IT projects with 5 years of Agile experience facilitating communication between business and IT, with programming and testing skills, e-MBA, and background in finance and data science.",
+      "url": "https://marcinkaminski.com",
+      "email": "emkaminsk@gmail.com",
+      "image": "https://marcinkaminski.com/img/MK03.jpg",
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Economics",
+          "description": "Master, Banking specialization, graduated with distinction"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "Aalto University & WSB",
+          "description": "eMBA, completed full studies with extra summer courses in Helsinki"
+        },
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Technology",
+          "description": "Postgraduate, Data warehouses and data analysis for business applications"
+        }
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Sii Polska"
+      },
+      "jobTitle": "Technical Product Owner",
+      "sameAs": [
+        "https://www.linkedin.com/in/marcinkaminski/",
+        "https://github.com/emkaminsk",
+        "https://twitter.com/emkaminsk",
+        "https://www.facebook.com/marcin.kaminski.01/"
+      ],
+      "knowsAbout": [
+        "Product Management",
+        "Agile",
+        "Scrum",
+        "Product Owner",
+        "Python",
+        "Data Science",
+        "Credit Lending",
+        "Business Intelligence",
+        "Risk Management",
+        "Docker",
+        "Kubernetes",
+        "Git",
+        "Azure DevOps",
+        "Business Analysis"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "description": "Very fluent"
+        },
+        {
+          "@type": "Language",
+          "name": "Spanish",
+          "description": "Basic communication"
+        },
+        {
+          "@type": "Language",
+          "name": "German",
+          "description": "Basic reading skills"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AiDevs2 certificate"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Prince2 Foundation"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ISTQB Foundation & Advanced Test Manager"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "IBAQB Foundation"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "ITIL"
+        }
+      ],
+      "seeks": {
+        "@type": "JobPosting",
+        "title": "Technical Product Owner or Senior Product Manager position"
+      }
+    }
+    </script>
   </head>
   <body>
+    <!-- Skip to content link for keyboard accessibility -->
+    <a href="#main-content" class="skip-link">Skip to content</a>
     <!-- Hero -->
     <div class="hero" data-theme="dark">
-      <nav class="container-fluid">
+      <nav class="container-fluid" aria-label="Main navigation">
         <ul>
           <li>
-            <a href="./" class="contrast" onclick="event.preventDefault()"
+            <a href="#" class="contrast" id="logo-link"
               ><strong>Marcin Kamiński</strong></a
             >
           </li>
@@ -31,20 +167,38 @@
           <a
             href="https://www.facebook.com/marcin.kaminski.01/"
             class="social-link"
+            aria-label="Facebook profile"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <img src="./icons/facebook.svg" alt="Facebook" />
+            <img src="./icons/facebook.svg" alt="" aria-hidden="true" />
           </a>
-          <a href="https://twitter.com/emkaminsk" class="social-link">
-            <img src="./icons/x.svg" alt="Twitter" />
+          <a
+            href="https://twitter.com/emkaminsk"
+            class="social-link"
+            aria-label="Twitter profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./icons/x.svg" alt="" aria-hidden="true" />
           </a>
           <a
             href="https://www.linkedin.com/in/marcinkaminski/"
             class="social-link"
+            aria-label="LinkedIn profile"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <img src="./icons/linkedin.svg" alt="Linkedin" />
+            <img src="./icons/linkedin.svg" alt="" aria-hidden="true" />
           </a>
-          <a href="https://github.com/emkaminsk" class="social-link">
-            <img src="./icons/github.svg" alt="GitHub" />
+          <a
+            href="https://github.com/emkaminsk"
+            class="social-link"
+            aria-label="GitHub profile"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./icons/github.svg" alt="" aria-hidden="true" />
           </a>
         </li>
         <ul>
@@ -60,6 +214,38 @@
               </ul>
             </details>
           </li>
+          <li>
+            <button
+              aria-label="Toggle theme"
+              aria-pressed="false"
+              data-theme-toggle
+              class="contrast theme-toggle-btn"
+            >
+              <svg
+                aria-hidden="true"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="theme-icon"
+              >
+                <!-- Sun icon (shown in light mode) -->
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+          </li>
         </ul>
       </nav>
       <header class="container">
@@ -70,7 +256,7 @@
       </header>
     </div>
     <!-- ./ Hero -->
-    <main class="container">
+    <main class="container" id="main-content">
       <div class="grid">
         <section>
           <div class="about-me-section">
@@ -87,14 +273,20 @@
                   <h3>Contact Information</h3>
                   <p>
                     Email:
-                    <a href="mailto:emkaminsk@gmail.com"
+                    <a href="mailto:emkaminsk@gmail.com?subject=Inquiry%20from%20CV%20Website"
                       >emkaminsk@gmail.com</a
                     >
                   </p>
                 </div>
               </hgroup>
               <figure>
-                <img src="./img/MK03.jpg" alt="Marcin Kamiński" />
+                <img
+                  src="./img/MK03.jpg"
+                  alt="Marcin Kamiński"
+                  width="200"
+                  height="200"
+                  loading="lazy"
+                />
                 <figcaption>Marcin Kamiński</figcaption>
               </figure>
             </div>
@@ -251,8 +443,145 @@
           <p>Classical music, chess, go, podcasts, sci-fi, Vipassana.</p>
         </section>
       </div>
+
+      <!-- Accordion Container for Mobile -->
+      <div class="accordion-container">
+        <!-- Skills Accordion -->
+        <div class="accordion-item">
+          <button
+            class="accordion-header"
+            aria-expanded="false"
+            aria-controls="skills-panel"
+            data-accordion-trigger
+          >
+            <span>Skills</span>
+            <svg
+              class="accordion-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="skills-panel" class="accordion-panel" role="region" aria-labelledby="skills-header">
+            <ul>
+              <li>Relationship-building</li>
+              <li>Engagement and loyalty</li>
+              <li>Credit lending domain knowledge</li>
+              <li>Customer-centric approach</li>
+              <li>Cross-functional collaboration</li>
+              <li>Data-driven decision making</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Technical Skills Accordion -->
+        <div class="accordion-item">
+          <button
+            class="accordion-header"
+            aria-expanded="false"
+            aria-controls="tech-skills-panel"
+            data-accordion-trigger
+          >
+            <span>Technical Skills</span>
+            <svg
+              class="accordion-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="tech-skills-panel" class="accordion-panel" role="region" aria-labelledby="tech-skills-header">
+            <ul>
+              <li>Linux, Docker, Git, GitHub, curl, Vim, OpenAPI/swagger, GH Actions</li>
+              <li>Python3 (pandas, dash, plotly) in VSCode, Pycharm, Jupyter, Google Colab</li>
+              <li>SQL, Business Objects, RapidMiner, Weka, PowerBI, Tableau</li>
+              <li>Wordpress, SEO Optimization, Markdown, AsciiDoc, Azure, AWS, Mermaid</li>
+              <li>NGINX, HTML, CSS, JS (basics)</li>
+              <li>Prompt Engineering with GPT-4, Auto-GPT, multiple other LLMs</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Trainings Accordion -->
+        <div class="accordion-item">
+          <button
+            class="accordion-header"
+            aria-expanded="false"
+            aria-controls="trainings-panel"
+            data-accordion-trigger
+          >
+            <span>Trainings & Certifications</span>
+            <svg
+              class="accordion-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="trainings-panel" class="accordion-panel" role="region" aria-labelledby="trainings-header">
+            <ul>
+              <li>AiDevs2 certificate</li>
+              <li>Prince2 Foundation</li>
+              <li>ISTQB Foundation & Advanced Test Manager</li>
+              <li>IBAQB Foundation, ITIL</li>
+              <li>Design Thinking</li>
+              <li>7 habits of highly effective people</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Languages Accordion -->
+        <div class="accordion-item">
+          <button
+            class="accordion-header"
+            aria-expanded="false"
+            aria-controls="languages-panel"
+            data-accordion-trigger
+          >
+            <span>Languages</span>
+            <svg
+              class="accordion-icon"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+          <div id="languages-panel" class="accordion-panel" role="region" aria-labelledby="languages-header">
+            <ul>
+              <li>English - very fluent</li>
+              <li>Spanish - basic communication</li>
+              <li>German - basic reading skills</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
-    <aside id="sidebar">
+
+    <aside id="sidebar" aria-label="Skills and qualifications">
       <section class="sidebar-section">
         <h4>Skills</h4>
         <ul>
@@ -302,8 +631,31 @@
         </ul>
       </section>
     </aside>
+
+    <!-- Back to Top Button -->
+    <button aria-label="Back to top" class="back-to-top">
+      <svg
+        aria-hidden="true"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+      </svg>
+    </button>
+
     <footer class="container">
       <small>© 2023 Marcin Kamiński</small>
     </footer>
+
+    <!-- JavaScript -->
+    <script src="js/minimal-theme-switcher.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
