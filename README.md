@@ -1,11 +1,12 @@
 # Personal CV - Marcin Kamiński
 
+## Links 
+
 [![CodeSandbox](https://img.shields.io/badge/CodeSandbox-000000?style=flat&logo=codesandbox&logoColor=white)](https://codesandbox.io/s/github/picocss/examples/tree/master/v1-company)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-A modern, responsive personal CV webpage showcasing professional experience, education, skills, and technical expertise. Built with clean HTML, CSS, and JavaScript using the Pico CSS framework for a professional and accessible presentation.
 
 ## Table of Contents
 
@@ -23,16 +24,7 @@ A modern, responsive personal CV webpage showcasing professional experience, edu
 
 ## Project Description
 
-This is a simple HTML-based webpage containing a comprehensive CV for public review. The page features a clean, professional design with dynamic elements including:
-
-- Responsive layout that adapts to different screen sizes
-- Fixed sidebar displaying skills, technical abilities, trainings, and languages
-- Integrated social media links (Facebook, LinkedIn, X/Twitter, GitHub)
-- Sectioned navigation for easy access to Experience, Education, and Interests
-- Dark/light theme support with local storage persistence
-- Custom 404 error page
-
-The project is designed for Technical Product Owners and IT professionals who need a modern web presence to showcase their career achievements and technical expertise.
+This is a simple HTML-based webpage containing a comprehensive CV for public review. 
 
 ## Getting Started Locally
 
