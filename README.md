@@ -25,8 +25,16 @@
 ## Project Description
 
 This is a simple HTML-based webpage containing a comprehensive CV for public review. 
+The awesome-CV contains examples and my own CV in LaTex.
 
 ## Getting Started Locally
+
+To convert my CV to pdf via LaTex run
+
+   ``` bash
+   cd awesome-CV$ 
+   xelatex -output-directory=myCV myCV/cv.tex
+   ```
 
 Since this is a static HTML website, getting started is straightforward:
 
