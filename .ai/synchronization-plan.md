@@ -5,8 +5,9 @@
 A simple Python script (~200 lines) that:
 1. Reads LaTeX files from `awesome-CV/myCV/`
 2. Extracts text content using regex
-3. Updates corresponding HTML sections in `index.html`
-4. Done.
+3. Makes a backup of `index.html` to file `index-<timestamp>.html.backup`
+4. Updates corresponding HTML sections in `index.html` and saves this file.
+
 
 **Core Principle**: This is text replacement, not a complex ETL pipeline. Keep it simple.
 
@@ -36,7 +37,7 @@ A simple Python script (~200 lines) that:
 ### What to Extract from LaTeX
 
 **From `cv.tex`:**
-- Name, position, email → Update HTML title, meta tags, hero section
+- Position → Update HTML title, meta tags, hero section
 - Quote → Update meta description
 
 **From `cv/experience.tex`:**
@@ -55,7 +56,8 @@ A simple Python script (~200 lines) that:
 - Extract interest items → Comma-separated text in Interests section
 
 ### What to Preserve in HTML
-- Social media links (not in LaTeX)
+- Name, phone, email address - not changing data
+- Social media links
 - CSS classes and structure
 - Accessibility attributes (aria-label, etc.)
 - Theme switcher and JavaScript
@@ -66,13 +68,14 @@ A simple Python script (~200 lines) that:
 
 ### Single Script: `sync_cv.py`
 
-**That's it. One file. ~200 lines.**
+**That's it. One file. Keep it simple**
 
 ```
 PersonalCV/
-├── sync_cv.py           # The entire script
-├── requirements.txt     # Just: beautifulsoup4, lxml
-└── (existing files)
+├── sync/
+    ├── sync_cv.py           # The entire script
+    └── requirements.txt     # Just: beautifulsoup4, lxml
+└── (existing files and folders)    
 ```
 
 ### Core Functions Needed
@@ -145,9 +148,9 @@ if __name__ == '__main__':
 
 ---
 
-## 4. Implementation Steps (1-2 Days Max)
+## 4. Implementation Steps
 
-### Day 1 Morning: Basic Parsing
+### Basic Parsing
 
 **Write 5-6 simple regex patterns:**
 - `\name{}{}`  → extract first, last name
@@ -157,7 +160,7 @@ if __name__ == '__main__':
 - `\item {}` → extract bullet points
 - Clean LaTeX symbols: `\&` → `&`, `\enskip` → ` `, etc.
 
-### Day 1 Afternoon: HTML Update
+### HTML Update
 
 **Write 3-4 update functions:**
 ```python
@@ -174,14 +177,12 @@ Same pattern for education, skills, interests.
 
 **Key insight**: Skills appear in TWO places (sidebar + accordion), but it's the same content copied. Just update both locations with same loop.
 
-### Day 2: Testing & Polish
+### Testing & Polish
 
 - Run script, check HTML renders correctly
 - Fix any regex issues or HTML formatting
 - Add basic error handling (file not found, etc.)
 - Done.
-
-**Total time: 1-2 days, not 4 weeks.**
 
 ---
 
@@ -319,8 +320,6 @@ Optional: Keep backup of index.html before running, so you can diff the changes.
 
 **What we're building:** A 200-line Python script that reads LaTeX, extracts content with regex, updates HTML with BeautifulSoup.
 
-**Timeline:** 1-2 days
-
 **Usage:**
 ```bash
 python sync_cv.py  # That's it
@@ -334,5 +333,6 @@ No overengineering. No frameworks. Just simple text processing.
 
 **Document Version**: 2.0 (SIMPLIFIED)
 **Author**: Claude (AI Assistant)
+**Reviewed**: MK, with corrections
 **Date**: 2025-12-13
 **Status**: Ready for Implementation (Realistic Version)
