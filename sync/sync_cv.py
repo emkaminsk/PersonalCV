@@ -6,6 +6,7 @@ Simple version - no overengineering
 """
 
 import re
+import sys
 from pathlib import Path
 from datetime import datetime
 from bs4 import BeautifulSoup  # type: ignore[import-untyped]
@@ -45,19 +46,27 @@ def read_latex_file(path):
 def parse_personal_info(content):
     """Extract personal information from cv.tex"""
     first = re.search(r'\\name\{([^}]+)\}\{([^}]+)\}', content)
-    position = re.search(r'\\position\{([^}]+)\}', content)
+
+    # Extract position with nested braces support
+    position_match = re.search(r'\\position\{((?:[^{}]|\\[{}]|{[^}]*})*)\}', content)
+    position_text = ''
+    if position_match:
+        position_text = position_match.group(1)
+        # Replace {\enskip\cdotp\enskip} with comma
+        position_text = position_text.replace(r'{\enskip\cdotp\enskip}', ', ')
+
     quote = re.search(r'\\quote\{``([^"]+)"', content)
 
     return {
         'first_name': first.group(1) if first else '',
         'last_name': first.group(2) if first else '',
-        'position': clean_latex(position.group(1)) if position else '',
+        'position': clean_latex(position_text),
         'quote': clean_latex(quote.group(1)) if quote else '',
     }
 
 
 def parse_cventry(content):
-    """Extract \cventry{}{}{}{}{} blocks from LaTeX"""
+    """Extract cventry{}{}{}{}{} blocks from LaTeX"""
     entries = []
 
     # Find all \cventry blocks - split by \cventry
@@ -109,7 +118,7 @@ def parse_cventry(content):
 
 
 def parse_cvskill(content):
-    """Extract \cvskill{}{} blocks from LaTeX"""
+    """Extract cvskill{}{} blocks from LaTeX"""
     skills = []
 
     # Find all \cvskill blocks - split by \cvskill
@@ -155,7 +164,7 @@ def parse_cvskill(content):
 
 
 def parse_cvhonor(content):
-    """Extract \cvhonor{}{}{}{} blocks from LaTeX"""
+    """Extract cvhonor{}{}{}{} blocks from LaTeX"""
     honors = []
 
     # Find all \cvhonor blocks - split by \cvhonor
@@ -266,7 +275,7 @@ def update_about_section(soup, personal_info):
         if hgroup:
             p = hgroup.find('p')
             if p:
-                p.string = personal_info['quote']
+                p.string = clean_latex(personal_info['quote'])
 
 
 def update_experience_section(soup, experiences):
@@ -500,11 +509,21 @@ def update_interests_section(soup, interests):
     """Update interests section"""
     interests_h3 = soup.find('h3', {'id': 'interests'})
     if interests_h3:
-        # Find the p tag after h3
-        p = interests_h3.find_next_sibling('p')
-        if p:
-            # Join interests with proper formatting
-            p.string = ' '.join(interests)
+        # Remove all existing p tags after h3 until next h3 or major section
+        current = interests_h3.find_next_sibling('p')
+        while current:
+            next_sibling = current.find_next_sibling()
+            if next_sibling and next_sibling.name in ['h3', 'h2', 'aside']:
+                break
+            current.decompose()
+            current = next_sibling if next_sibling and next_sibling.name == 'p' else None
+
+        # Insert a paragraph for each interest
+        for interest in interests:
+            p = soup.new_tag('p')
+            p.string = interest
+            interests_h3.insert_after(p)
+            interests_h3 = p  # Move anchor for next insertion
 
 
 # =============================================================================
@@ -520,7 +539,36 @@ def create_backup(html_path):
     return backup_path
 
 
-def main():
+def find_latest_backup(base_path):
+    """Find the most recent backup file in the base directory"""
+    backup_files = sorted(base_path.glob('index-*.html.backup'))
+    return backup_files[-1] if backup_files else None
+
+
+def revert_to_backup(base_path):
+    """Restore index.html from the latest backup file"""
+    print("=" * 60)
+    print("CV Revert: Restoring from Latest Backup")
+    print("=" * 60)
+
+    html_path = base_path / 'index.html'
+    backup_file = find_latest_backup(base_path)
+
+    if not backup_file:
+        print("✗ No backup files found")
+        sys.exit(1)
+
+    print(f"\n✓ Found backup: {backup_file.name}")
+
+    # Restore from backup
+    html_path.write_text(backup_file.read_text(encoding='utf-8'), encoding='utf-8')
+    print(f"✓ Restored index.html from {backup_file.name}")
+    print("\n" + "=" * 60)
+    print("✓ Revert complete!")
+    print("=" * 60)
+
+
+def sync():
     """Main synchronization function"""
     print("=" * 60)
     print("CV Synchronization: LaTeX → HTML")
@@ -602,4 +650,9 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    base_path = Path(__file__).parent.parent
+
+    if '--revert' in sys.argv:
+        revert_to_backup(base_path)
+    else:
+        sync()

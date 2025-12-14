@@ -16,8 +16,11 @@ pip install -r requirements.txt
 ## Usage
 
 ```bash
-# Run from the project root directory
-python3 sync/sync_cv.py
+# Normal sync (reads LaTeX, updates HTML, creates backup)
+  python sync/sync_cv.py
+
+  # Revert to latest backup (restores previous index.html)
+  python sync/sync_cv.py --revert
 ```
 
 The script will:
