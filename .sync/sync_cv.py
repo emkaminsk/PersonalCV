@@ -578,7 +578,7 @@ def sync():
 
     # Define paths
     base_path = Path(__file__).parent.parent
-    latex_path = base_path / 'awesome-CV' / 'myCV'
+    latex_path = base_path / '.awesome-CV' / 'myCV'
     html_path = base_path / 'index.html'
 
     # 1. Create backup
