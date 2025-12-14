@@ -84,11 +84,19 @@
 \RequirePackage{parskip}
 % Needed to deal hyperlink
 \RequirePackage[hidelinks,unicode,pdfpagelabels=false]{hyperref}
+% Disable the default PDF viewer
+% \hypersetup{%
+%   pdftitle={},
+%   pdfauthor={},
+%   pdfsubject={},
+%   pdfkeywords={}
+% }
 \hypersetup{%
-  pdftitle={},
-  pdfauthor={},
-  pdfsubject={},
-  pdfkeywords={}
+  pdftitle={CV of Marcin Kamiński},
+  pdfauthor={Marcin Kamiński},
+  pdfsubject={CV of Marcin Kamiński - Senior Consultant, Product Manager, Technical Product Owner},
+  pdfkeywords={CV, Marcin Kamiński, Senior Consultant, Product Manager, Technical Product Owner, AI/ML, SaaS, Fintech, Biotech, Engineering},
+  pdfpagemode=UseNone  % This prevents side panels from opening
 }
 % Solves issues Warning: File `cv.out' has changed
 \RequirePackage{bookmark}
