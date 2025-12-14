@@ -29,6 +29,7 @@ def clean_latex(text):
         r'\/': '/',
         r'\item': '',
         r'\%': '%',
+        r'\#': '#',
     }
 
     for old, new in replacements.items():
