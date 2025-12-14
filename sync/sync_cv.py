@@ -8,7 +8,7 @@ Simple version - no overengineering
 import re
 from pathlib import Path
 from datetime import datetime
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup  # type: ignore[import-untyped]
 
 
 # =============================================================================
@@ -313,7 +313,8 @@ def update_experience_section(soup, experiences):
         # Insert after experience h3
         experience_h3.insert_after(div)
 
-    # Reverse order (since we're inserting after h3, last becomes first)
+    # Fix order: collect all divs and re-insert in correct order
+    # Since insert_after() reverses the initial order, we need to reverse back
     # Collect all divs
     divs = []
     current = experience_h3.find_next_sibling('div', {'class': 'job-experience'})
@@ -323,8 +324,8 @@ def update_experience_section(soup, experiences):
         current.extract()
         current = next_div
 
-    # Re-insert in reverse order
-    for div in reversed(divs):
+    # Re-insert in same order (divs already reversed from first insertion)
+    for div in divs:
         experience_h3.insert_after(div)
 
 
@@ -371,7 +372,8 @@ def update_education_section(soup, education):
         # Insert after education h3
         education_h3.insert_after(div)
 
-    # Fix order
+    # Fix order: collect all divs and re-insert in correct order
+    # Since insert_after() reverses the initial order, we need to reverse back
     divs = []
     current = education_h3.find_next_sibling('div', {'class': 'education-experience'})
     while current:
@@ -380,7 +382,8 @@ def update_education_section(soup, education):
         current.extract()
         current = next_div
 
-    for div in reversed(divs):
+    # Re-insert in same order (divs already reversed from first insertion)
+    for div in divs:
         education_h3.insert_after(div)
 
 
