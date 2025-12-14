@@ -18,4 +18,4 @@ jobs:
           port: 10114
           script: |
             cd gitrepos/PersonalCV
-            git pull origin main
+            git pull
