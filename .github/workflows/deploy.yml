@@ -17,5 +17,5 @@ jobs:
           key: ${{ secrets.VPS_SSH_KEY }}
           port: 10114
           script: |
-            cd gitrepos/
+            cd gitrepos/PersonalCV
             git pull origin main
