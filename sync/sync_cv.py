@@ -28,6 +28,7 @@ def clean_latex(text):
         r'\cdotp': '·',
         r'\/': '/',
         r'\item': '',
+        r'\%': '%',
     }
 
     for old, new in replacements.items():
