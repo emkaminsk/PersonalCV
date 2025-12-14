@@ -215,10 +215,12 @@ def parse_interests(content):
 
 def update_meta_tags(soup, personal_info):
     """Update meta tags and title with personal information"""
+    # Create full name for use in multiple meta tags
+    name = f"{personal_info['first_name']} {personal_info['last_name']}"
+
     # Update title
     title = soup.find('title')
     if title:
-        name = f"{personal_info['first_name']} {personal_info['last_name']}"
         title.string = f"{name} - {personal_info['position']} CV"
 
     # Update meta description
