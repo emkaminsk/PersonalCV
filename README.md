@@ -32,7 +32,7 @@ The awesome-CV contains examples and my own CV in LaTex.
 To convert my CV to pdf via LaTex run
 
    ``` bash
-   cd awesome-CV$ 
+   cd .awesome-CV$ 
    xelatex -output-directory=myCV myCV/cv.tex
    ```
 
